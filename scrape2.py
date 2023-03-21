@@ -30,7 +30,7 @@ with open('amazon_data.csv') as file:
                 manu = s.select(".a-size-base prodDetAttrValue")[0].get_text().strip()'''
 
                 #ii)
-                #worked when data not having any class or id so it founds the sibling of the data until that data not found
+                #worked when data not having any class or id so it founds the sibling of the data until that data found
                 manufature = s.find_all('ul', {'class': 'a-unordered-list a-nostyle a-vertical a-spacing-none detail-bullet-list'})[0]
                 asin = manufature.find('span', string=re.compile('ASIN')).find_next_sibling('span').text.strip()
 

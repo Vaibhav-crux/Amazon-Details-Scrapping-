@@ -29,7 +29,6 @@ for i in range(1,11):
         try:
             price = k.find('span', {'class':'a-price-whole'}).text
             product_url = 'https://www.amazon.in' + k.h2.a['href']
-            # items.append([product_name,rating,reviews,price,product_url])
             items.append([product_url,product_name,price,rating,reviews])
         except AttributeError:
             continue
